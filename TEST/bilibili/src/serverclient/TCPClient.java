@@ -26,9 +26,9 @@ import java.net.Socket;
 public class TCPClient {
     public static void main(String[] args) throws IOException {
         //1.创建一个本地字节输入流FileInputStream对象,构造方法中绑定要读取的数据源
-        FileInputStream fis = new FileInputStream("C:\\Users\\李书彬\\Desktop\\picture.png");
+        FileInputStream fis = new FileInputStream("/Users/lishubin/Desktop/123.png");
         //2.创建一个客户端Socket对象,构造方法中绑定服务器的IP地址和端口号
-        Socket socket = new Socket("127.0.0.1",8888);
+        Socket socket = new Socket("127.0.0.1",8887);
         //3.使用Socket中的方法getOutputStream,获取网络字节输出流OutputStream对象
         OutputStream os = socket.getOutputStream();
         //4.使用本地字节输入流FileInputStream对象中的方法read,读取本地文件
@@ -59,7 +59,7 @@ public class TCPClient {
         System.out.println("444444444444444444  while死循环打印不到");
 
         //8.释放资源(FileInputStream,Socket)
-//        fis.close();
-//        socket.close();
+        fis.close();
+        socket.close();
     }
 }

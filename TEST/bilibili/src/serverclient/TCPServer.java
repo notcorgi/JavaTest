@@ -29,20 +29,20 @@ import java.net.Socket;
 public class TCPServer {
     public static void main(String[] args) throws IOException {
         //1.创建一个服务器ServerSocket对象,和系统要指定的端口号
-        ServerSocket server = new ServerSocket(8888);
+        ServerSocket server = new ServerSocket(8887);
         //2.使用ServerSocket对象中的方法accept,获取到请求的客户端Socket对象
         Socket socket = server.accept();
         //3.使用Socket对象中的方法getInputStream,获取到网络字节输入流InputStream对象
         InputStream is = socket.getInputStream();
         //4.判断d:\\upload文件夹是否存在,不存在则创建
-        File file =  new File("C:\\Users\\李书彬\\Desktop");
+        File file =  new File("/Users/lishubin/Desktop/");
         if(!file.exists()){
             file.mkdirs();
         }
 
 
         //5.创建一个本地字节输出流FileOutputStream对象,构造方法中绑定要输出的目的地
-        FileOutputStream fos = new FileOutputStream(file+"\\picturecopy.png");
+        FileOutputStream fos = new FileOutputStream(file+"/123copy.png");
         //6.使用网络字节输入流InputStream对象中的方法read,读取客户端上传的文件
 
         System.out.println("11111111111111111111");

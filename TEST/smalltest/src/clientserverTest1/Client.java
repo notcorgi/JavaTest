@@ -10,8 +10,6 @@ public class Client {
         Socket socket = new Socket("127.0.0.1", 9999);
         OutputStream os = socket.getOutputStream();
         os.write("hello".getBytes());
-        socket.shutdownOutput();
-//        os.flush();
         InputStream is = socket.getInputStream();
         int len;
         byte[] bytes = new byte[1024];
